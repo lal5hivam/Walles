@@ -15,14 +15,23 @@
     </div>
   </nav>
 
-  <!-- Main Content -->
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Build Your Future with WALLES</h1>
+      <p>Your one-stop solution for Web Development, Consultancy & more</p>
+      <button onclick="scrollToSection()">Get Started ↓</button>
+    </div>
+  </header>
+
+  <!-- Cards Section -->
   <main>
-    <section class="cards-section">
-      <h1>Choose a Service</h1>
+    <section class="cards-section" id="cardsSection">
+      <h2 class="section-title">Choose a Service</h2>
       <div class="cards">
-        <div class="card" onclick="openModal('web')">Web Development</div>
-        <div class="card" onclick="openModal('consultancy')">Consultancy</div>
-        <div class="card" onclick="openModal('other')">Other</div>
+        <div class="card hidden" onclick="openModal('web')">Web Development</div>
+        <div class="card hidden" onclick="openModal('consultancy')">Consultancy</div>
+        <div class="card hidden" onclick="openModal('other')">Other</div>
       </div>
     </section>
   </main>
