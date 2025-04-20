@@ -3,81 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WALLES - Contact</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <title>WALLES - Contact Services</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="nav-content">
-      <h2>WALLES</h2>
-    </div>
+    <div class="logo">WALLES</div>
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero">
+  <section class="hero">
     <div class="hero-content">
-      <h1>Build Your Future with WALLES</h1>
-      <p>Your one-stop solution for Web Development, Consultancy & more</p>
-      <button onclick="scrollToSection()">Get Started ↓</button>
+      <h1>Welcome to WALLES</h1>
+      <p>Let’s build something amazing together.</p>
+      <button onclick="scrollToCards()">Explore Services</button>
     </div>
-  </header>
+  </section>
 
   <!-- Cards Section -->
-  <main>
-    <section class="cards-section" id="cardsSection">
-      <h2 class="section-title">Choose a Service</h2>
-      <div class="cards">
-        <div class="card hidden" onclick="openModal('web')">Web Development</div>
-        <div class="card hidden" onclick="openModal('consultancy')">Consultancy</div>
-        <div class="card hidden" onclick="openModal('other')">Other</div>
-      </div>
-    </section>
-  </main>
+  <section class="services" id="services">
+    <div class="card" onclick="openModal('web-modal')">
+      <h2>Web Development</h2>
+    </div>
+    <div class="card" onclick="openModal('consultancy-modal')">
+      <h2>Consultancy</h2>
+    </div>
+    <div class="card" onclick="openModal('other-modal')">
+      <h2>Other</h2>
+    </div>
+  </section>
 
   <!-- Modals -->
-  <div id="modal-web" class="modal">
+  <div class="modal" id="web-modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('web')">&times;</span>
+      <span class="close" onclick="closeModal('web-modal')">&times;</span>
       <h2>Web Development</h2>
-      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Describe your project..." required></textarea>
+      <form name="web-form" method="POST" data-netlify="true">
+        <input type="email" name="email" required placeholder="Your Email" />
+        <textarea name="message" required placeholder="Describe your project..."></textarea>
         <button type="submit">Send</button>
       </form>
     </div>
   </div>
 
-  <div id="modal-consultancy" class="modal">
+  <div class="modal" id="consultancy-modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('consultancy')">&times;</span>
+      <span class="close" onclick="closeModal('consultancy-modal')">&times;</span>
       <h2>Consultancy</h2>
-      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Describe your needs..." required></textarea>
+      <form name="consultancy-form" method="POST" data-netlify="true">
+        <input type="email" name="email" required placeholder="Your Email" />
+        <textarea name="message" required placeholder="Describe your project..."></textarea>
         <button type="submit">Send</button>
       </form>
     </div>
   </div>
 
-  <div id="modal-other" class="modal">
+  <div class="modal" id="other-modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('other')">&times;</span>
-      <h2>Other Service</h2>
-      <form class="contact-form" action="https://formspree.io/f/mqaprwab" method="POST">
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Let us know..." required></textarea>
+      <span class="close" onclick="closeModal('other-modal')">&times;</span>
+      <h2>Other Services</h2>
+      <form name="other-form" method="POST" data-netlify="true">
+        <input type="email" name="email" required placeholder="Your Email" />
+        <textarea name="message" required placeholder="Describe your project..."></textarea>
         <button type="submit">Send</button>
       </form>
     </div>
   </div>
+
+  <!-- Hidden Forms for Netlify -->
+  <form name="web-form" netlify hidden>
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+  </form>
+  <form name="consultancy-form" netlify hidden>
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+  </form>
+  <form name="other-form" netlify hidden>
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+  </form>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 WALLES. All rights reserved.</p>
   </footer>
 
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
