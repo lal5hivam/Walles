@@ -3,76 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WALLES - Contact Services</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>WALLES - Contact</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">WALLES</div>
+    <div class="nav-content">
+      <h2>WALLES</h2>
+    </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <header class="hero">
     <div class="hero-content">
-      <h1>Welcome to WALLES</h1>
-      <p>Let’s build something amazing together.</p>
-      <button onclick="scrollToCards()">Explore Services</button>
+      <h1>Build Your Future with WALLES</h1>
+      <p>Your one-stop solution for Web Development, Consultancy & more</p>
+      <button onclick="scrollToSection()">Get Started ↓</button>
     </div>
-  </section>
+  </header>
 
   <!-- Cards Section -->
-  <section class="services" id="services">
-    <div class="card" onclick="openModal('web-modal')">
-      <h2>Web Development</h2>
-    </div>
-    <div class="card" onclick="openModal('consultancy-modal')">
-      <h2>Consultancy</h2>
-    </div>
-    <div class="card" onclick="openModal('other-modal')">
-      <h2>Other</h2>
-    </div>
-  </section>
+  <main>
+    <section class="cards-section" id="cardsSection">
+      <h2 class="section-title">Choose a Service</h2>
+      <div class="cards">
+        <div class="card hidden" onclick="openModal('web')">Web Development</div>
+        <div class="card hidden" onclick="openModal('consultancy')">Consultancy</div>
+        <div class="card hidden" onclick="openModal('other')">Other</div>
+      </div>
+    </section>
+  </main>
 
   <!-- Modals -->
-  <div class="modal" id="web-modal">
+  <div id="modal-web" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('web-modal')">&times;</span>
+      <span class="close" onclick="closeModal('web')">&times;</span>
       <h2>Web Development</h2>
       <form name="web-form" method="POST" data-netlify="true">
         <input type="email" name="email" required placeholder="Your Email" />
         <textarea name="message" required placeholder="Describe your project..."></textarea>
         <button type="submit">Send</button>
-      </form>
+      </form>      
     </div>
   </div>
 
-  <div class="modal" id="consultancy-modal">
+  <div id="modal-consultancy" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('consultancy-modal')">&times;</span>
+      <span class="close" onclick="closeModal('consultancy')">&times;</span>
       <h2>Consultancy</h2>
       <form name="consultancy-form" method="POST" data-netlify="true">
-        <input type="email" name="email" required placeholder="Your Email" />
-        <textarea name="message" required placeholder="Describe your project..."></textarea>
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Describe your needs..." required></textarea>
         <button type="submit">Send</button>
       </form>
     </div>
   </div>
 
-  <div class="modal" id="other-modal">
+  <div id="modal-other" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('other-modal')">&times;</span>
-      <h2>Other Services</h2>
+      <span class="close" onclick="closeModal('other')">&times;</span>
+      <h2>Other Service</h2>
       <form name="other-form" method="POST" data-netlify="true">
-        <input type="email" name="email" required placeholder="Your Email" />
-        <textarea name="message" required placeholder="Describe your project..."></textarea>
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Let us know..." required></textarea>
         <button type="submit">Send</button>
       </form>
     </div>
   </div>
 
-  <!-- Hidden Forms for Netlify -->
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 WALLES. All rights reserved.</p>
+  </footer>
+
+  <!-- Hidden fallback forms for Netlify -->
   <form name="web-form" netlify hidden>
     <input type="email" name="email" />
     <textarea name="message"></textarea>
@@ -86,12 +92,6 @@
     <textarea name="message"></textarea>
   </form>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 WALLES. All rights reserved.</p>
-  </footer>
-
-  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
