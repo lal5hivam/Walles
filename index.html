@@ -31,6 +31,8 @@
       <div class="cards">
         <div class="card hidden" onclick="openModal('web')">Web Development</div>
         <div class="card hidden" onclick="openModal('consultancy')">Consultancy</div>
+        <div class="card hidden" onclick="openModal('freelancing')">Freelancing</div>
+        <div class="card hidden" onclick="openModal('fitness')">Physical & Mental Fitness</div>
         <div class="card hidden" onclick="openModal('other')">Other</div>
       </div>
     </section>
@@ -61,6 +63,30 @@
     </div>
   </div>
 
+  <div id="modal-freelancing" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('freelancing')">&times;</span>
+      <h2>Freelancing</h2>
+      <form name="freelancing-form" method="POST" data-netlify="true">
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="What kind of freelance help do you need?" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-fitness" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('fitness')">&times;</span>
+      <h2>Physical & Mental Fitness</h2>
+      <form name="fitness-form" method="POST" data-netlify="true">
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Share your goals or concerns..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
   <div id="modal-other" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('other')">&times;</span>
@@ -84,6 +110,14 @@
     <textarea name="message"></textarea>
   </form>
   <form name="consultancy-form" netlify hidden>
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+  </form>
+  <form name="freelancing-form" netlify hidden>
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+  </form>
+  <form name="fitness-form" netlify hidden>
     <input type="email" name="email" />
     <textarea name="message"></textarea>
   </form>
