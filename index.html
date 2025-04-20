@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WALLES - Contact</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-content">
+      <h2>WALLES</h2>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <section class="cards-section">
+      <h1>Choose a Service</h1>
+      <div class="cards">
+        <div class="card" onclick="openModal('web')">Web Development</div>
+        <div class="card" onclick="openModal('consultancy')">Consultancy</div>
+        <div class="card" onclick="openModal('other')">Other</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modals -->
+  <div id="modal-web" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('web')">&times;</span>
+      <h2>Web Development</h2>
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Describe your project..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-consultancy" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('consultancy')">&times;</span>
+      <h2>Consultancy</h2>
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Describe your needs..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-other" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('other')">&times;</span>
+      <h2>Other Service</h2>
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Let us know..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 WALLES. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
